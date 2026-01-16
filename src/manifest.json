@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Whitespace Formatting",
+  "version": "1.0",
+  "description": "Small tools for cleaning input fields",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "Auto Whitespace Formatting",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "clean-inputs.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

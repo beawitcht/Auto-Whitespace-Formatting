@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Auto Whitespace Formatting</title>
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 12px;
+      min-width: 320px;
+      max-width: 420px;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    fieldset {
+      border: 1px solid color-mix(in oklab, CanvasText 20%, transparent);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin: 0 0 10px;
+    }
+
+    legend {
+      padding: 0 4px;
+      font-weight: 600;
+    }
+
+    .row {
+      margin: 6px 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      resize: vertical;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      padding: 6px;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .muted {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #status {
+      font-size: 12px;
+      opacity: .8;
+      min-height: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Auto Whitespace Formatting: Settings</h1>
+
+  <fieldset>
+    <legend>Mode</legend>
+    <div class="row">
+      <label><input type="radio" name="mode" value="all" /> All sites (default)</label>
+    </div>
+    <div class="row">
+      <label><input type="radio" name="mode" value="allow" /> Only on Allow list</label>
+    </div>
+    <div class="row">
+      <label><input type="radio" name="mode" value="deny" /> On all sites except Deny list</label>
+    </div>
+    <div id="status" aria-live="polite"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Optional Formatting</legend>
+    <div class="row">
+      <label>
+        <input type="checkbox" id="collapseNewlines" />
+        Collapse double newlines to a single newline
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        <input type="checkbox" id="applyOnPaste" />
+        Apply formatting on paste
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset id="allowBox">
+    <legend>Allow List</legend>
+    <textarea id="allowList" placeholder="one.domain.com&#10;another.tld"></textarea>
+    <div class="muted">When Mode = “Only on Allow list”, formatting runs only on these domains.</div>
+  </fieldset>
+
+  <fieldset id="denyBox">
+    <legend>Deny List</legend>
+    <textarea id="denyList" placeholder="admin.portal.local&#10;private.example"></textarea>
+    <div class="muted">When Mode = “On all sites except Deny list”, formatting skips these domains.</div>
+  </fieldset>
+  <div class="row" style="display:flex; gap:8px; align-items:center; margin-bottom:10px;">
+    <button id="addUrlBtn" title="Add current page URL to the selected list">➕ Add URL to list</button>
+    <button id="addDomainBtn" title="Add current page domain (wildcard) to the selected list">🌐 Add domain to
+      list</button>
+  </div>
+
+
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
