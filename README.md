@@ -12,3 +12,6 @@ Features
 Usage
 - Click the extension icon to open the popup, then use the provided controls to configure how you like.
 
+<br>
+
+![screenshot of settings with silly dog pictures around it](images/screenshot.jpg)
