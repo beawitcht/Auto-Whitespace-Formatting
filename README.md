@@ -14,4 +14,6 @@ Usage
 
 <br>
 
-![screenshot of settings with silly dog pictures around it](images/screenshot.jpg)
+<p align="center">
+  <img width="640" height"400" alt="screenshot of settings with silly dog pictures around it" src="images/screenshot.jpg">
+</p>
