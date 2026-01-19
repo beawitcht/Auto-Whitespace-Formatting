@@ -159,10 +159,12 @@
             if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
                 const start = typeof el.selectionStart === 'number' ? el.selectionStart : el.value.length;
                 const end = typeof el.selectionEnd === 'number' ? el.selectionEnd : el.value.length;
-                try { el.focus(); } catch (e) { /* ignore */ }
+                try { el.focus(); } catch (e) { /* ignore */ };
+                console.debug({bef: start, aft: end});
                 const val = el.value || '';
                 const newVal = val.slice(0, start) + cleaned + val.slice(end);
                 //el.value = newVal;
+                document.execCommand("selectAll");
                 document.execCommand("insertText", false, newVal);
                 return;
             }
