@@ -3,6 +3,9 @@ Auto Whitespace Formatting
 ![GitHub manifest version](https://img.shields.io/github/manifest-json/v/beawitcht/Auto-Whitespace-Formatting?filename=src%2Fmanifest.json&label=Source)
 ![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/eadgahnmkiekfdidigefdpmmankejndk)
 
+Get it on:
+ - [Chrome](https://chromewebstore.google.com/detail/auto-whitespace-formattin/eadgahnmkiekfdidigefdpmmankejndk)
+
 A small browser extension to clean up extra whitespace.
 
 Features
