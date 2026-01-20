@@ -1,5 +1,6 @@
 Auto Whitespace Formatting
 =================
+![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/eadgahnmkiekfdidigefdpmmankejndk)
 
 A small browser extension to clean up extra whitespace.
 
